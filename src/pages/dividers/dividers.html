@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Sticky ion-item-divider
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding #content>
+    <ion-item-group>
+        <ion-item-divider ion-affix [content]="content" (click)="test()">Group 1 (click me!)</ion-item-divider>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-item-group>
+    <ion-item-group>
+        <ion-item-divider ion-affix [content]="content">Group 2</ion-item-divider>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-item-group>
+    <ion-list>
+        <ion-item-divider>Group 3 (non sticky)</ion-item-divider>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+    <ion-item-group>
+        <ion-item-divider ion-affix [content]="content">Group 4</ion-item-divider>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-item-group>
+</ion-content>

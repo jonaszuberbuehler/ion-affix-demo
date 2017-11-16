@@ -1,0 +1,76 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Sticky w/ ion-segment
+        </ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="page">
+            <ion-segment-button value="page1">
+                Items
+            </ion-segment-button>
+            <ion-segment-button value="page2">
+                More items
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding #content>
+    <div [ngSwitch]="page">
+        <div *ngSwitchCase="'page1'">
+            <ion-list>
+                <ion-list-header ion-affix [content]="content" (click)="test()">Header 1 (click me!)</ion-list-header>
+                <ion-item *ngFor="let item of items">{{item}}</ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-list-header ion-affix [content]="content">Header 2</ion-list-header>
+                <ion-item *ngFor="let item of items">{{item}}</ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-list-header>Header 3 (non sticky)</ion-list-header>
+                <ion-item *ngFor="let item of items">{{item}}</ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-list-header ion-affix [content]="content">Header 4</ion-list-header>
+                <ion-item *ngFor="let item of items">{{item}}</ion-item>
+            </ion-list>
+        </div>
+        <div *ngSwitchCase="'page2'">
+            <ion-list>
+                <ion-list-header ion-affix [content]="content">Other header</ion-list-header>
+                <ion-item>A</ion-item>
+                <ion-item>B</ion-item>
+                <ion-item>C</ion-item>
+                <ion-item>D</ion-item>
+                <ion-item>E</ion-item>
+                <ion-item>F</ion-item>
+                <ion-item>G</ion-item>
+                <ion-item>H</ion-item>
+                <ion-item>I</ion-item>
+                <ion-item>J</ion-item>
+                <ion-item>K</ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-list-header ion-affix [content]="content">Header 2</ion-list-header>
+                <ion-item>Test 1</ion-item>
+                <ion-item>Test 2</ion-item>
+                <ion-item>Test 3</ion-item>
+                <ion-item>Test 4</ion-item>
+                <ion-item>Test 5</ion-item>
+                <ion-item>Test 6</ion-item>
+                <ion-item>Test 7</ion-item>
+                <ion-item>Test 8</ion-item>
+                <ion-item>Test 9</ion-item>
+                <ion-item>Test 10</ion-item>
+                <ion-item>Test 11</ion-item>
+                <ion-item>Test 12</ion-item>
+                <ion-item>Test 13</ion-item>
+                <ion-item>Test 14</ion-item>
+                <ion-item>Test 15</ion-item>
+                <ion-item>Test 16</ion-item>
+                <ion-item>Test 17</ion-item>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>

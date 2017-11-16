@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button icon-only (click)="scrollToTop(content)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            Sticky ion-list-header
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding #content>
+    <ion-list>
+        <ion-list-header ion-affix [content]="content" (click)="test()">Header 1 (click me!)</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header #header ion-affix [content]="content" (click)="test()" (onSticky)="sticky($event)">Header 2</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Header 3 (non sticky)</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Header 4</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+</ion-content>

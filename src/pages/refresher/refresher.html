@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Sticky ion-list-header
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content #content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh" refreshingText="Refreshing..."></ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+        <ion-list-header ion-affix [content]="content" (click)="test()">Header 1 (click me!)</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header ion-affix [content]="content">Header 2</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Header 3 (non sticky)</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header ion-affix [content]="content">Header 4</ion-list-header>
+        <ion-item *ngFor="let item of items">{{item}}</ion-item>
+    </ion-list>
+</ion-content>

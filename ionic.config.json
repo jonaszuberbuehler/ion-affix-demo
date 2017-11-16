@@ -1,0 +1,8 @@
+{
+  "name": "ion-affix-demo",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
