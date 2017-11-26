@@ -11,6 +11,7 @@ import { CardsPageModule } from '../pages/cards/cards.module';
 import { HeadersPageModule } from '../pages/headers/headers.module';
 import { SegmentsPageModule } from '../pages/segment/segments.module';
 import { RefresherPageModule } from '../pages/refresher/refresher.module';
+import { ScrollPageModule } from '../pages/scroll/scroll.module';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { RefresherPageModule } from '../pages/refresher/refresher.module';
         CardsPageModule,
         HeadersPageModule,
         SegmentsPageModule,
-        RefresherPageModule
+        RefresherPageModule,
+        ScrollPageModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [

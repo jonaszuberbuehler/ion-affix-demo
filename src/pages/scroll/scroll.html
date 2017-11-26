@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Sticky w/ ion-scroll
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-scroll scrollY="true" style="width: 100%; height: 50%; overflow: hidden" #content>
+        <ion-list>
+            <ion-list-header ion-affix [content]="content" (click)="test()">Header 1 (click me!)</ion-list-header>
+            <ion-item *ngFor="let item of items">{{item}}</ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-list-header #header ion-affix [content]="content">Header 2</ion-list-header>
+            <ion-item *ngFor="let item of items">{{item}}</ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-list-header>Header 3 (non sticky)</ion-list-header>
+            <ion-item *ngFor="let item of items">{{item}}</ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-list-header>Header 4</ion-list-header>
+            <ion-item *ngFor="let item of items">{{item}}</ion-item>
+        </ion-list>
+    </ion-scroll>
+    <ion-slides style="height: 50%">
+        <ion-slide>
+            <h1>Slide 1</h1>
+        </ion-slide>
+        <ion-slide>
+            <h1>Slide 2</h1>
+        </ion-slide>
+        <ion-slide>
+            <h1>Slide 3</h1>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

@@ -11,7 +11,7 @@
         <ion-refresher-content pullingText="Pull to refresh" refreshingText="Refreshing..."></ion-refresher-content>
     </ion-refresher>
     <ion-list>
-        <ion-list-header ion-affix [content]="content" (click)="test()">Header 1 (click me!)</ion-list-header>
+        <ion-list-header ion-affix [content]="content">Header 1 (pull down to refresh)</ion-list-header>
         <ion-item *ngFor="let item of items">{{item}}</ion-item>
     </ion-list>
     <ion-list>

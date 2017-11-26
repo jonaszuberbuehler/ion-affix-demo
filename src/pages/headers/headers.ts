@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Content, IonicPage } from 'ionic-angular';
-import { IonAffix } from 'ion-affix';
+import { ActionSheetController, IonicPage } from 'ionic-angular';
 
 @IonicPage({
     name: 'headers',
@@ -10,9 +9,12 @@ import { IonAffix } from 'ion-affix';
     templateUrl: 'headers.html'
 })
 export class HeadersPage {
-    @ViewChild('header', {read: IonAffix}) ionAffix;
+    @ViewChild('content') content;
 
     items = Array.from({length: 15}, (value, key) => key);
+
+    constructor(public actionSheetCtrl: ActionSheetController) {
+    }
 
     test() {
         alert('Click handler works!');
@@ -22,7 +24,19 @@ export class HeadersPage {
         console.log(event.affix);
     }
 
-    scrollToTop(content: Content) {
-        content.scrollToTop();
+    showActions() {
+        this.actionSheetCtrl.create({
+            title: 'Actions',
+            buttons: [
+                {
+                    text: 'Scroll to top',
+                    handler: () => this.scrollToTop()
+                }
+            ]
+        }).present();
+    }
+
+    private scrollToTop() {
+        this.content.scrollToTop();
     }
 }
